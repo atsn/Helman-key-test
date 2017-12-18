@@ -16,7 +16,7 @@ namespace Universal_TCP_Client
         private readonly NetworkStream clientStream;
         private readonly StreamReader clientStreamReader;
         private readonly StreamWriter clientStreamWriter;
-        public BigInteger n = BigInteger.Parse("9999999929");
+        public BigInteger n = BigInteger.Parse("99999929");
 
         public ConnectionHandler(string name, bool isclient, string ip = "")
         {
@@ -106,12 +106,12 @@ namespace Universal_TCP_Client
 
         public BigInteger getrandombigint()
         {
-            BigInteger returnvalue = new BigInteger(10000000000000000000);
+            BigInteger returnvalue = BigInteger.Parse("10000000000000000000");
 
             while (returnvalue > n)
             {
                 var random = new Random();
-                var r = random.Next() % 10 + 1;
+                var r = random.Next() % 8 + 1;
                 var randombig = "";
                 for (var i = 0; i < r; i++)
                 {
